@@ -2,7 +2,6 @@
 
 A powerful web-based hash generator and decoder with a stunning Matrix rain effect. Generate MD5, SHA-1, and SHA-256 hashes instantly, or attempt to decode hashes using our rainbow table lookup system.
 
-![Hash Generator Preview](hashposter.png)
 
 ## ✨ Features
 
@@ -42,6 +41,7 @@ A powerful web-based hash generator and decoder with a stunning Matrix rain effe
 
 [View Live Demo](https://roobiul.github.io/hash_converter/)
 
+![Hash Generator Preview](hashposter.png)
 
 ## 🛠️ Installation
 
@@ -49,3 +49,5 @@ A powerful web-based hash generator and decoder with a stunning Matrix rain effe
 ```bash
 git clone https://github.com/yourusername/hash-generator.git
 cd hash-generator
+
+
