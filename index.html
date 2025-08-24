@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Generator & Decoder - MD5, SHA1, SHA256</title>
+    <link rel="icon" type="image/png" href="hash.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <div class="container">
+        <h1>Hash Generator & Decoder</h1>
+        <p class="subtitle">Two-Way Hash Converter</p>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" onclick="switchMode('encode')">Text to Hash</button>
+            <button class="mode-btn" onclick="switchMode('decode')">Hash to Text</button>
+        </div>
+        
+        <!-- Encoding Section -->
+        <div id="encode-section" class="input-section">
+            <label for="input-text">Enter text to hash:</label>
+            <textarea id="input-text" placeholder="Type or paste your text here..."></textarea>
+            
+            <div class="button-group">
+                <button onclick="generateHash('MD5')">Generate MD5</button>
+                <button onclick="generateHash('SHA1')">Generate SHA-1</button>
+                <button onclick="generateHash('SHA256')">Generate SHA-256</button>
+                <button onclick="generateAll()">Generate All</button>
+                <button onclick="clearEncode()">Clear</button>
+            </div>
+            
+            <div id="encode-results" class="results hidden">
+                <div id="md5-result" class="result-item hidden">
+                    <h3>MD5 Hash:</h3>
+                    <p id="md5-value"></p>
+                    <button class="copy-btn" onclick="copyToClipboard('md5-value')">Copy</button>
+                </div>
+                
+                <div id="sha1-result" class="result-item hidden">
+                    <h3>SHA-1 Hash:</h3>
+                    <p id="sha1-value"></p>
+                    <button class="copy-btn" onclick="copyToClipboard('sha1-value')">Copy</button>
+                </div>
+                
+                <div id="sha256-result" class="result-item hidden">
+                    <h3>SHA-256 Hash:</h3>
+                    <p id="sha256-value"></p>
+                    <button class="copy-btn" onclick="copyToClipboard('sha256-value')">Copy</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decoding Section -->
+        <div id="decode-section" class="input-section hidden">
+            <label for="hash-input">Enter hash to decode:</label>
+            <textarea id="hash-input" placeholder="Paste your hash here..."></textarea>
+            
+            <div class="hash-type-selector">
+                <label>Select hash type:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="hashType" value="MD5" checked>
+                        <span>MD5</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="hashType" value="SHA1">
+                        <span>SHA-1</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="hashType" value="SHA256">
+                        <span>SHA-256</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="button-group">
+                <button onclick="decodeHash()">Decode Hash</button>
+                <button onclick="clearDecode()">Clear</button>
+            </div>
+            
+            <div id="decode-results" class="results hidden">
+                <div class="result-item">
+                    <h3>Decode Result:</h3>
+                    <p id="decode-value"></p>
+                    <div id="decode-status"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <p><strong>Note:</strong> Hash functions are one-way by design. The decoder uses a database of common hashes and rainbow tables. It may not decode all hashes, especially those from random or complex strings.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Developed by MD ROBIUL ISLAM, CSE, JSTU</p>
+         <script type="text/javascript">
+            atOptions = {
+                'key': 'acb20ab1d7b09fdc3a0b243e48228eab',
+                'format': 'iframe',
+                'height': 90,
+                'width': 728,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/acb20ab1d7b09fdc3a0b243e48228eab/invoke.js"></script>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="matrix.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
