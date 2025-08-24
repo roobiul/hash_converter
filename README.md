@@ -42,16 +42,6 @@ A powerful web-based hash generator and decoder with a stunning Matrix rain effe
 
 [View Live Demo](https://yourusername.github.io/hash-generator)
 
-## 📸 Screenshots
-
-### Encode Mode
-![Encode Mode](screenshots/encode.png)
-
-### Decode Mode
-![Decode Mode](screenshots/decode.png)
-
-### Mobile View
-![Mobile View](screenshots/mobile.png)
 
 ## 🛠️ Installation
 
